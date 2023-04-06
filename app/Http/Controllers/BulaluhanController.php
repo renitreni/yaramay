@@ -39,7 +39,7 @@ class BulaluhanController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
-            'subject' => 'required|string|email|max:255',
+            'subject' => 'required|string|max:255',
             'message' => 'required|string|max:1000',
         ]);
 
