@@ -21,4 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'bulaluhan'], function () {
     Route::post('book', [BulaluhanController::class, 'book'])->name('book');
+    Route::post('contact', [BulaluhanController::class, 'contact'])->name('contact');
 });

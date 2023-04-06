@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\BulaluhanContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\BulaluhanReservationMail;
@@ -30,6 +31,27 @@ class BulaluhanController extends Controller
 
         return response()->json([
             'message' => 'Reservation created successfully'
+        ], 201);
+    }
+
+    public function contact(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'subject' => 'required|string|email|max:255',
+            'message' => 'required|string|max:1000',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+
+        // Send email
+        Mail::to(['ronald@bulalohansariyadh.xyz'])->send(new BulaluhanContactMail($request->all()));
+
+        return response()->json([
+            'message' => 'Contact has been sent successfully'
         ], 201);
     }
 }
