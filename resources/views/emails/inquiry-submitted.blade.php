@@ -7,9 +7,9 @@
 <body>
     <h2>New Inquiry Submitted</h2>
 
-        <p>Name: {{ $name }}</p>
-        <p>Email: {{ $email }}</p>
-        <p>Subject: {{ $subject }}</p>
-        <p>Message: {{ $message }}</p>
+        <p>Name: {{ $mailData['name'] }}</p>
+        <p>Email: {{ $mailData['email'] }}</p>
+        <p>Subject: {{ $mailData['subject'] }}</p>
+        <p>Message: {{ $mailData['message'] }}</p>
 </body>
 </html>
