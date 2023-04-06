@@ -26,7 +26,7 @@ class BulaluhanController extends Controller
         }
 
         // Send email
-        Mail::to($request->input('email'))->send(new BulaluhanReservationMail($request->all()));
+        Mail::to('ronald@bulalohansariyadh.xyz')->bcc('yaramayservices@gmail.com')->send(new BulaluhanReservationMail($request->all()));
 
         return response()->json([
             'message' => 'Reservation created successfully'
