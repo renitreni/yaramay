@@ -262,3 +262,125 @@ if (typeof AOS !== 'undefined') {
     window.location.hash;
   window.history.replaceState({}, '', cleanUrl);
 })();
+
+// NEW UPDATE JUNE 8 2026
+//PHILIPINE HANDLER //
+// --- PHILIPPINE HANDLERS (SELYADO AT REFRESHED LOGIC) ---
+
+// 1. LOGIC PARA SA PAG-ADD
+document.getElementById('add-ph-handler').addEventListener('click', function() {
+    const container = document.getElementById('ph-handler-container');
+    const buttonControls = document.getElementById('ph-button-controls');
+    if (!container || !buttonControls) return;
+
+    // Binibilang ang LAHAT ng 'ph-row' sa screen ngayon (hardcoded man o dynamic)
+    const currentRowsCount = container.getElementsByClassName('ph-row').length;
+    
+    // Automatic na magpapatuloy sa tamang kasunod na numero (hal. 3 + 1 = 4, o 1 + 1 = 2)
+    const nextNumber = currentRowsCount + 1;
+
+    // Haharangin kapag magiging 6 na ang idadagdag (Maximum of 5)
+    if (nextNumber > 5) {
+        alert('Maximum of 5 handlers reached.');
+        return;
+    }
+
+    // Template ng bagong row - 'ph-row' ang ginamit nating class!
+    const newRowHTML = `
+        <div class="row g-2 align-items-start mb-3 ph-row col-12 border-bottom pb-3 mb-2">
+            <div class="col-md-4">
+                <label class="form-label">${nextNumber}. Handler Name</label>
+                <input type="text" name="ph_handler_name[]" class="form-control contact-form__input" placeholder="Enter handler name">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label text-muted">Contact Person</label>
+                <input type="text" name="ph_handler_person[]" class="form-control contact-form__input" placeholder="Full name">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label text-muted">Contact Number</label>
+                <input type="tel" name="ph_handler_number[]" class="form-control contact-form__input" placeholder="Phone or mobile">
+            </div>
+        </div>
+    `;
+    
+    // Isisingit ang bagong row sa itaas mismo ng mga buttons
+    buttonControls.insertAdjacentHTML('beforebegin', newRowHTML);
+});
+
+// 2. LOGIC PARA SA PAG-REMOVE (Pinalakas gamit ang hiwalay na button)
+const removePhBtn = document.getElementById('remove-ph-handler');
+if (removePhBtn) {
+    removePhBtn.addEventListener('click', function(e) {
+        e.preventDefault(); // Iwasan ang hindi sinasadyang pag-submit ng form
+        
+        const container = document.getElementById('ph-handler-container');
+        if (!container) return;
+
+        // Kinukuha ang lahat ng rows na may class na 'ph-row'
+        const allRows = container.getElementsByClassName('ph-row');
+        
+        // Tinitiyak na laging may matitirang isa (bawal burahin ang Number 1)
+        if (allRows.length <= 3) {
+            alert('Minimum of 3 handler is required.');
+            return;
+        }
+
+        // Buburahin ang pinakahuling row sa screen
+        const lastRow = allRows[allRows.length - 1];
+        if (lastRow) {
+            lastRow.remove();
+        }
+    });
+}
+
+// FOREIGN HANDLER //
+document.getElementById('add-fr-handler').addEventListener('click', function() {
+    const container = document.getElementById('fr-handler-container');
+    const buttonControls = document.getElementById('fr-button-controls');
+    if (!container || !buttonControls) return;
+
+    const currentRowsCount = container.getElementsByClassName('fr-row').length;
+    const nextNumber = currentRowsCount + 1;
+    if (nextNumber > 5) {
+        alert("Maximum of 5 foreign handlers reached.");
+        return;
+    }
+
+  const newRowHTML = `
+        <div class="row g-2 align-items-start mb-3 col-12 border-bottom pb-3 mb-2  fr-row">
+            <div class="col-md-4">
+                <label class="form-label">${nextNumber}. Agency Name</label>
+                <input type="text" name="fr_handler_name[]" class="form-control contact-form__input" placeholder="Enter agency name">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label text-muted">Contact Person</label>
+                <input type="text" name="fr_handler_person[]" class="form-control contact-form__input" placeholder="Full name">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label text-muted">Contact Number</label>
+                <input type="tel" name="fr_handler_number[]" class="form-control contact-form__input" placeholder="Phone or mobile">
+            </div>
+        </div>
+    `;
+    
+    buttonControls.insertAdjacentHTML('beforebegin', newRowHTML);
+});
+
+const removeFrBtn = document.getElementById('remove-fr-handler');
+if (removeFrBtn) {
+    removeFrBtn.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        
+        const container = document.getElementById('fr-handler-container');
+        if (!container) return;
+        const allRows = container.getElementsByClassName('fr-row');
+        if (allRows.length <= 3) {
+            alert('Minimum of 3 agency handler is required.');
+            return;
+        }
+        const lastRow = allRows[allRows.length - 1];
+        if (lastRow) {
+            lastRow.remove();
+        }
+    });
+}

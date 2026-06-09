@@ -237,27 +237,42 @@ if ($position === 'other' && $positionOther !== '') {
 }
 
 $phHandlers = [];
-for ($i = 1; $i <= 5; $i++) {
-    $value = field('ph_handler_' . $i);
-    if ($value !== '') {
-        $phHandlers[$i] = [
-        'handler' => $value,
-        'person' => field('ph_handler_' . $i . '_person'),
-        'number' => field('ph_handler_' . $i . '_number') 
-        ];
+if(isset($_POST['ph_handler_name']) && is_array($_POST['ph_handler_name'])){
+    $phName = $_POST['ph_handler_name'];
+    $phPerson = $_POST['ph_handler_person'] ?? [];
+    $phNumber = $_POST['ph_handler_number'] ?? [];
+
+    $count = 1;
+    foreach ($phName as $index => $nameValue) {
+        if(trim($nameValue) !== '') {
+            $phHandlers[$count] = [
+                'agency' => trim($nameValue),
+                'person' => trim($phPerson[$index] ?? ''),
+                'number' => trim($phNumber[$index] ?? '')
+            ];
+            $count++;
+        }
     }
 }
 
 $foreignHandlers = [];
-for ($i = 1; $i <= 5; $i++) {
-    $value = field('foreign_handler_' . $i);
-    if ($value !== '') {
-        $foreignHandlers[$i] = [
-            'agency' => $value,
-            'person' => field('foreign_handler_' . $i . '_person'),
-            'number' => field('foreign_handler_' . $i . '_number') 
-        ];
+if(isset($_POST['fr_handler_name']) && is_array($_POST['fr_handler_name'])){
+    $frNames = $_POST['fr_handler_name'];
+    $frPerson = $_POST['fr_handler_name'] ?? [];
+    $frNumber = $_POST['fr_handler_number'] ?? [];
+
+    $count = 1; 
+    foreach($frNames as $index => $nameValue){
+        if(trim($nameValue) !== ''){
+            $foreignHandlers[$count] = [
+                'agency' => trim($nameValue),
+                'person' => trim($phPerson[$index] ?? ''),
+                'number' => trim($phNumber[$index] ?? '')
+            ];
+            $count++;
+        }
     }
+
 }
 
 $recipients = 'renier.trenuela@gmail.com, Sab_princes@yahoo.com';

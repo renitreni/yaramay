@@ -125,92 +125,65 @@
               <fieldset class="registration-form__fieldset">
                 <legend class="registration-form__legend">Name of Agency Handler in Philippines</legend>
                 <div class="row g-3">
-
-                  <div class="col-12 border-bottom pb-3 mb-2">
-                    <div class="row g-2">
+                  <div id="ph-handler-container">
+  
+                    <div class="row g-2 align-items-start mb-3 col-12 border-bottom pb-3 mb-2 ph-row">
                       <div class="col-md-4">
-                        <label for="ph_handler_1" class="form-label">1. Handler Name</label>
-                        <input type="text" id="ph_handler_1" name="ph_handler_1" class="form-control contact-form__input" placeholder="Enter handler name">
+                        <label class="form-label">1. Handler Name</label>
+                        <input type="text" name="ph_handler_name[]" class="form-control contact-form__input" placeholder="Enter handler name">
                       </div>
                       <div class="col-md-4">
-                        <label for="ph_handler_1_person" class="form-label">Contact Person</label>
-                        <input type="text" id="ph_handler_1_person" name="ph_handler_1_person" class="form-control contact-form__input" placeholder="Full name">
+                        <label class="form-label text-muted">Contact Person</label>
+                        <input type="text" name="ph_handler_person[]" class="form-control contact-form__input" placeholder="Full name">
                       </div>
                       <div class="col-md-4">
-                        <label for="foreign_handler_1_number" class="form-label">Contact Number</label>
-                        <input type="tel" id="ph_handler_1_number" name="ph_handler_1_number" class="form-control contact-form__input" placeholder="Phone or mobile">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-12 border-bottom pb-3 mb-2">
-                    <div class="row g-2">
-                      <div class="col-md-4">
-                        <label for="ph_handler_2" class="form-label">2. Handler Name</label>
-                        <input type="text" id="ph_handler_2" name="ph_handler_2" class="form-control contact-form__input" placeholder="Enter handler name">
-                      </div>
-                      <div class="col-md-4">
-                        <label for="ph_handler_2_person" class="form-label">Contact Person</label>
-                        <input type="text" id="ph_handler_2_person" name="ph_handler_2_person" class="form-control contact-form__input" placeholder="Full name">
-                      </div>
-                      <div class="col-md-4">
-                        <label for="ph_handler_2_number" class="form-label">Contact Number</label>
-                        <input type="tel" id="ph_handler_2_number" name="ph_handler_2_number" class="form-control contact-form__input" placeholder="Phone or mobile">
+                        <label class="form-label text-muted">Contact Number</label>
+                        <input type="text" name="ph_handler_number[]" class="form-control contact-form__input" placeholder="Phone or mobile">
                       </div>
                     </div>
-                  </div>
 
-                  <div class="col-12 border-bottom pb-3 mb-2">
-                    <div class="row g-2">
+                    <div class="row g-2 align-items-start mb-3 col-12 border-bottom pb-3 mb-2 ph-row">
                       <div class="col-md-4">
-                        <label for="ph_handler_3" class="form-label">3. Handler Name</label>
-                        <input type="text" id="ph_handler_3" name="ph_handler_3" class="form-control contact-form__input" placeholder="Enter handler name">
+                        <label class="form-label">2. Handler Name</label>
+                        <input type="text" name="ph_handler_name[]" class="form-control contact-form__input" placeholder="Enter handler name">
                       </div>
                       <div class="col-md-4">
-                        <label for="ph_handler_3_person" class="form-label">Contact Person</label>
-                        <input type="text" id="ph_handler_3_person" name="ph_handler_3_person" class="form-control contact-form__input" placeholder="Full name">
+                        <label class="form-label text-muted">Contact Person</label>
+                        <input type="text" name="ph_handler_person[]" class="form-control contact-form__input" placeholder="Full name">
                       </div>
                       <div class="col-md-4">
-                        <label for="ph_handler_3_number" class="form-label">Contact Number</label>
-                        <input type="tel" id="ph_handler_3_number" name="ph_handler_3_number" class="form-control contact-form__input" placeholder="Phone or mobile">
+                        <label class="form-label text-muted">Contact Number</label>
+                        <input type="text" name="ph_handler_number[]" class="form-control contact-form__input" placeholder="Phone or mobile">
                       </div>
                     </div>
-                  </div>
 
-                  <div class="col-12 border-bottom pb-3 mb-2">
-                    <div class="row g-2">
+                    <div class="row g-2 align-items-start mb-3 col-12 border-bottom pb-3 mb-2 ph-row">
                       <div class="col-md-4">
-                        <label for="ph_handler_4" class="form-label">4. Handler Name</label>
-                        <input type="text" id="ph_handler_4" name="ph_handler_4" class="form-control contact-form__input" placeholder="Enter handler name">
+                        <label class="form-label">3. Handler Name</label>
+                        <input type="text" name="ph_handler_name[]" class="form-control contact-form__input" placeholder="Enter handler name">
                       </div>
                       <div class="col-md-4">
-                        <label for="ph_handler_4_person" class="form-label">Contact Person</label>
-                        <input type="text" id="ph_handler_4_person" name="ph_handler_4_person" class="form-control contact-form__input" placeholder="Full name">
+                        <label class="form-label text-muted">Contact Person</label>
+                        <input type="text" name="ph_handler_person[]" class="form-control contact-form__input" placeholder="Full name">
                       </div>
                       <div class="col-md-4">
-                        <label for="foreign_handler_4_number" class="form-label">Contact Number</label>
-                        <input type="tel" id="ph_handler_4_number" name="ph_handler_4_number" class="form-control contact-form__input" placeholder="Phone or mobile">
+                        <label class="form-label text-muted">Contact Number</label>
+                        <input type="text" name="ph_handler_number[]" class="form-control contact-form__input" placeholder="Phone or mobile">
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="row g-2">
-                      <div class="col-md-4">
-                        <label for="ph_handler_5" class="form-label">5. Handler Name</label>
-                        <input type="text" id="ph_handler_5" name="ph_handler_5" class="form-control contact-form__input" placeholder="Enter handler name">
+                    <div class="row mt-2" id="ph-button-controls">
+                      <div class="col-auto">
+                        <button type="button" id="add-ph-handler" class="btn btn-outline-primary btn-sm mt-1">
+                          <i class="bi bi-plus-lg"></i> Add New Handler
+                        </button>
                       </div>
-                      <div class="col-md-4">
-                        <label for="ph_handler_5_person" class="form-label">Contact Person</label>
-                        <input type="text" id="ph_handler_5_person" name="ph_handler_5_person" class="form-control contact-form__input" placeholder="Full name">
+                      <div class="col-auto">
+                        <button type="button" id="remove-ph-handler" class="btn btn-outline-danger btn-sm mt-1">
+                          <i class="bi bi-dash-lg"></i> Remove Last Handler
+                        </button>
                       </div>
-                      <div class="col-md-4">
-                        <label for="foreign_handler_1_number" class="form-label">Contact Number</label>
-                        <input type="tel" id="ph_handler_5_number" name="ph_handler_5_number" class="form-control contact-form__input" placeholder="Phone or mobile">
-                      </div>
-                    </div>
-                  </div>
+                    </div>  
+                </div>         
               </fieldset>
 
               <!-- FOREIGN HANDLER -->
@@ -218,90 +191,64 @@
                 <legend class="registration-form__legend">Name of Handler Agency in Foreign Recruitment / Manpower</legend>
                 <div class="row g-3">
 
-                  <div class="col-12 border-bottom pb-3 mb-2">
-                    <div class="row g-2">
+                    <div id="fr-handler-container">
+                    <div class="row g-2 align-items-start mb-3 col-12 border-bottom pb-3 mb-2  fr-row">
                       <div class="col-md-4">
-                        <label for="foreign_handler_1" class="form-label">1. Agency Name</label>
-                        <input type="text" id="foreign_handler_1" name="foreign_handler_1" class="form-control contact-form__input" placeholder="Enter agency name">
+                        <label class="form-label">1. Agency Name</label>
+                        <input type="text" name="fr_handler_name[]" class="form-control contact-form__input" placeholder="Enter agency name">
                       </div>
                       <div class="col-md-4">
-                        <label for="foreign_handler_1_person" class="form-label text-muted">Contact Person</label>
-                        <input type="text" id="foreign_handler_1_person" name="foreign_handler_1_person" class="form-control contact-form__input" placeholder="Full name">
+                        <label class="form-label text-muted">Contact Person</label>
+                        <input type="text" name="fr_handler_person[]" class="form-control contact-form__input" placeholder="Full name">
                       </div>
                       <div class="col-md-4">
-                        <label for="foreign_handler_1_number" class="form-label text-muted">Contact Number</label>
-                        <input type="tel" id="foreign_handler_1_number" name="foreign_handler_1_number" class="form-control contact-form__input" placeholder="Phone or mobile">
+                        <label class="form-label text-muted">Contact Number</label>
+                        <input type="text" name="fr_handler_number[]" class="form-control contact-form__input" placeholder="Phone or mobile">
                       </div>
                     </div>
-                  </div>
 
-                  <div class="col-12 border-bottom pb-3 mb-2">
-                    <div class="row g-2">
+                    <div class="row g-2 align-items-start mb-3 col-12 border-bottom pb-3 mb-2  fr-row">
                       <div class="col-md-4">
-                        <label for="foreign_handler_2" class="form-label">2. Agency Name</label>
-                        <input type="text" id="foreign_handler_2" name="foreign_handler_2" class="form-control contact-form__input" placeholder="Enter agency name">
+                        <label class="form-label">2. Agency Name</label>
+                        <input type="text" name="fr_handler_name[]" class="form-control contact-form__input" placeholder="Enter agency name">
                       </div>
                       <div class="col-md-4">
-                        <label for="foreign_handler_2_person" class="form-label text muted">Contact Person</label>
-                        <input type="text" id="foreign_handler_2_person" name="foreign_handler_2_person" class="form-control contact-form__input" placeholder="Full name">
+                        <label class="form-label text-muted">Contact Person</label>
+                        <input type="text" name="fr_handler_person[]" class="form-control contact-form__input" placeholder="Full name">
                       </div>
                       <div class="col-md-4">
-                        <label for="foreign_handler_2_number" class="form-label">Contact Number</label>
-                        <input type="tel" id="foreign_handler_2_number" name="foreign_handler_2_number" class="form-control contact-form__input" placeholder="Phone or mobile">
+                        <label class="form-label text-muted">Contact Number</label>
+                        <input type="text" name="fr_handler_number[]" class="form-control contact-form__input" placeholder="Phone or mobile">
                       </div>
                     </div>
-                  </div>
 
-                  <div class="col-12 border-bottom pb-3 mb-2">
-                    <div class="row g-2">
+                    <div class="row g-2 align-items-start mb-3 col-12 border-bottom pb-3 mb-2  fr-row">
                       <div class="col-md-4">
-                        <label for="foreign_handler_3" class="form-label">3. Agency Name</label>
-                        <input type="text" id="foreign_handler_3" name="foreign_handler_3" class="form-control contact-form__input" placeholder="Enter agency name">
+                        <label class="form-label">3. Agency Name</label>
+                        <input type="text" name="fr_handler_name[]" class="form-control contact-form__input" placeholder="Enter agency name">
                       </div>
                       <div class="col-md-4">
-                        <label for="foreign_handler_3_person" class="form-label text muted">Contact Person</label>
-                        <input type="text" id="foreign_handler_3_person" name="foreign_handler_3_person" class="form-control contact-form__input" placeholder="Full name">
+                        <label class="form-label text-muted">Contact Person</label>
+                        <input type="text" name="fr_handler_person[]" class="form-control contact-form__input" placeholder="Full name">
                       </div>
                       <div class="col-md-4">
-                        <label for="foreign_handler_3_number" class="form-label">Contact Number</label>
-                        <input type="tel" id="foreign_handler_3_number" name="foreign_handler_3_number" class="form-control contact-form__input" placeholder="Phone or mobile">
+                        <label class="form-label text-muted">Contact Number</label>
+                        <input type="text" name="fr_handler_number[]" class="form-control contact-form__input" placeholder="Phone or mobile">
                       </div>
                     </div>
-                  </div>
 
-                  <div class="col-12 border-bottom pb-3 m-2">
-                    <div class="row g-2">
-                      <div class="col-md-4">
-                        <label for="foreign_handler_4" class="form-label">4. Agency Name</label>
-                        <input type="text" id="foreign_handler_4" name="foreign_handler_4" class="form-control contact-form__input" placeholder="Enter agency name">
+                    <div class="row mt-2" id="fr-button-controls">
+                      <div class="col-auto">
+                        <button type="button" id="add-fr-handler" class="btn btn-outline-primary btn-sm mt-1">
+                          <i class="bi bi-plus-lg"></i> Add New Handler
+                        </button>
                       </div>
-                      <div class="col-md-4">
-                        <label for="foreign_handler_4" class="form-label">Contact Person</label>
-                        <input type="text" id="foreign_handler_4_person" name="foreign_handler_4_person" class="form-control contact-form__input" placeholder="Full name">
+                      <div class="col-auto">
+                        <button type="button" id="remove-fr-handler" class="btn btn-outline-danger btn-sm mt-1">
+                          <i class="bi bi-dash-lg"></i> Remove Last Handler
+                        </button>
                       </div>
-                      <div class="col-md-4">
-                        <label for="foreign_handler_4" class="form-label">Contact Number</label>
-                        <input type="tel" id="foreign_handler_4_number" name="foreign_handler_4_number" class="form-control contact-form__input" placeholder="Phone or mobile">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    <div class="row g-2">
-                      <div class="col-md-4">
-                        <label for="foreign_handler_5" class="form-label">5. Agency Name</label>
-                        <input type="text" id="foreign_handler_5" name="foreign_handler_5" class="form-control contact-form__input" placeholder="Enter agency name">
-                      </div>
-                      <div class="col-md-4">
-                        <label for="foreign_handler_5" class="form-label">Contact Person</label>
-                        <input type="text" id="foreign_handler_5_person" name="foreign_handler_5_person" class="form-control contact-form__input" placeholder="Full name">
-                      </div>
-                      <div class="col-md-4">
-                        <label for="foreign_handler_5" class="form-label">Contact Number</label>
-                        <input type="tel" id="foreign_handler_5_number" name="foreign_handler_5_number" class="form-control contact-form__input" placeholder="Phone or mobile">
-                      </div>
-                    </div>
-                  </div>
+                    </div>  
                 </div>
                   
               </fieldset>
@@ -321,11 +268,11 @@
           </div>
         </div>
 
-        <div class="col-lg-4 order-1 order-lg-2" data-aos="fade-left">
+        <div class="col-12 col-lg-4 order-1 order-lg-2" data-aos="fade-left">
           <aside class="registration-sidebar">
             <div class="registration-sidebar__media">
               <img src="qms/yaramay-qms.jpeg" alt="YARAMAY Quality Management System" class="registration-sidebar__image" loading="lazy">
-              <video class="registration-sidebar__video" autoplay muted loop playsinline poster="qms/yaramay-qms.jpeg">
+              <video class="registration-sidebar__video d-none d-lg-block" autoplay muted loop playsinline poster="qms/yaramay-qms.jpeg">
                 <source src="qms/yaramay-qms.mp4" type="video/mp4">
               </video>
             </div>
