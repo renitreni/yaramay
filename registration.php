@@ -246,7 +246,7 @@ if(isset($_POST['ph_handler_name']) && is_array($_POST['ph_handler_name'])){
     foreach ($phName as $index => $nameValue) {
         if(trim($nameValue) !== '') {
             $phHandlers[$count] = [
-                'agency' => trim($nameValue),
+                'handler' => trim($nameValue),
                 'person' => trim($phPerson[$index] ?? ''),
                 'number' => trim($phNumber[$index] ?? '')
             ];
@@ -266,8 +266,8 @@ if(isset($_POST['fr_handler_name']) && is_array($_POST['fr_handler_name'])){
         if(trim($nameValue) !== ''){
             $foreignHandlers[$count] = [
                 'agency' => trim($nameValue),
-                'person' => trim($phPerson[$index] ?? ''),
-                'number' => trim($phNumber[$index] ?? '')
+                'person' => trim($frPerson[$index] ?? ''),
+                'number' => trim($frNumber[$index] ?? '')
             ];
             $count++;
         }
