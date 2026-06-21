@@ -245,7 +245,7 @@ if(isset($_POST['ph_handler_name']) && is_array($_POST['ph_handler_name'])){
 $foreignHandlers = [];
 if(isset($_POST['fr_handler_name']) && is_array($_POST['fr_handler_name'])){
     $frNames = $_POST['fr_handler_name'];
-    $frPerson = $_POST['fr_handler_name'] ?? [];
+    $frPerson = $_POST['fr_handler_person'] ?? [];
     $frNumber = $_POST['fr_handler_number'] ?? [];
 
     $count = 1; 
