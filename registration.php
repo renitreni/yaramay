@@ -1,4 +1,7 @@
 <?php
+
+require_once __DIR__ . '/includes/BrevoMailer.php';
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: registration.html');
     exit;
@@ -12,22 +15,6 @@ function field(string $key): string
 function e(string $value): string
 {
     return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
-}
-
-function mailHeaders(string $fromAddress, string $fromName, ?string $replyTo = null): array
-{
-    $headers = [
-        'From: ' . $fromName . ' <' . $fromAddress . '>',
-        'MIME-Version: 1.0',
-        'Content-Type: text/html; charset=UTF-8',
-        'X-Mailer: PHP/' . phpversion(),
-    ];
-
-    if ($replyTo !== null) {
-        $headers[] = 'Reply-To: ' . $replyTo;
-    }
-
-    return $headers;
 }
 
 function confirmationEmailHtml(string $fullName): string
@@ -275,7 +262,6 @@ if(isset($_POST['fr_handler_name']) && is_array($_POST['fr_handler_name'])){
 
 }
 
-$recipients = 'renier.trenuela@gmail.com, Sab_princes@yahoo.com';
 $subject = 'YARAMAY Registration: ' . $fullName;
 
 $body = adminEmailHtml(
@@ -290,30 +276,40 @@ $body = adminEmailHtml(
     $comments
 );
 
-$fromAddress = 'yaramayservices@gmail.com';
-$headers = mailHeaders(
-    $fromAddress,
-    'YARAMAY Website',
-    $fullName . ' <' . $email . '>'
-);
-
-$sentAdmin = mail($recipients, $subject, $body, implode("\r\n", $headers));
+$adminResult = BrevoMailer::send([
+    'to' => BrevoMailer::adminRecipients(),
+    'subject' => $subject,
+    'htmlBody' => $body,
+    'replyTo' => ['email' => $email, 'name' => $fullName],
+    'fromName' => 'YARAMAY Website',
+    'context' => 'registration_admin',
+]);
 
 $confirmationSubject = 'Registration Confirmed – QMS Orientation & Awareness Program';
 $confirmationBody = confirmationEmailHtml($fullName);
-$confirmationHeaders = mailHeaders(
-    $fromAddress,
-    'Yaramay Company IT Services',
-    'Yaramay Company IT Services <' . $fromAddress . '>'
-);
 
-$sentConfirmation = mail($email, $confirmationSubject, $confirmationBody, implode("\r\n", $confirmationHeaders));
+$confirmationResult = BrevoMailer::send([
+    'to' => [['email' => $email, 'name' => $fullName]],
+    'subject' => $confirmationSubject,
+    'htmlBody' => $confirmationBody,
+    'fromName' => 'Yaramay Company IT Services',
+    'context' => 'registration_confirmation',
+]);
 
-$sent = $sentAdmin && $sentConfirmation;
+$sent = $adminResult['success'] && $confirmationResult['success'];
 
 if ($sent) {
     header('Location: registration.html?registration=success');
-} else {
-    header('Location: registration.html?registration=error&reason=send');
+    exit;
 }
+
+$errorReason = 'send';
+if (
+    ($adminResult['error'] ?? null) === 'body_too_large'
+    || ($confirmationResult['error'] ?? null) === 'body_too_large'
+) {
+    $errorReason = 'toolarge';
+}
+
+header('Location: registration.html?registration=error&reason=' . $errorReason);
 exit;

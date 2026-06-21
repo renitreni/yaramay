@@ -178,6 +178,7 @@ if (typeof AOS !== 'undefined') {
     error: {
       missing: 'Please fill in all fields before sending.',
       email: 'Please enter a valid email address.',
+      toolarge: 'Your message is too long. Please shorten it and try again.',
       send: 'We could not send your message. Please try again later or email us directly.',
     },
   };
@@ -235,6 +236,7 @@ if (typeof AOS !== 'undefined') {
     error: {
       missing: 'Please fill in all required fields before submitting.',
       email: 'Please enter a valid email address.',
+      toolarge: 'Your registration details are too long. Please shorten your comments and try again.',
       send: 'We could not send your registration. Please try again later or contact us directly.',
     },
   };
